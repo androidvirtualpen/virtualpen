@@ -61,13 +61,22 @@ then log out and log. To restore your system in its previous state, simply run
 
 For Android, the app has been build with the SDK Android 14 (API Level 34) and should readily build in Android Studio.
 
-For the linux-host, the dependencies are:
+For the linux-host, if you are not setup for building C++ and cmake projects, begin with:
 
-`usb-1.0`
+``sudo apt-get install build-essential cmake``
 
+install the required dependencies through:
 
-``sudo apt-get install libusb-1.0-0-dev``
+```
+sudo apt-get install libusb-1.0-0-dev libgl1-mesa-dev qt6-base-dev
+```
 
-Then 
+Then into the sources directory ``virtual-pen-linux-host``, run:
+
+``cmake ./`` to generate the cmake build.
+
+Then peform the actual build through:
+
+``make``
 
 

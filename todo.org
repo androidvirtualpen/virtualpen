@@ -7,5 +7,5 @@
 *** DONE Allow to set pressure sensitivity
 *** DONE Allow to save device settings
 *** TODO Add tilt support
-*** TODO Add eraser support
-*** TODO Addresse on-off stroke issue
+*** DONE Add eraser support
+
