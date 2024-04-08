@@ -12,7 +12,7 @@ Current features:
   - In fixed mode, if the android device screen resolution fits into your PC screen, it is centered and mapped on that latter screen at a 1:1 ratio. This mode should incurr no distortion.
 - Detect available usb devices and automatically save your settings for each
 
-![alt text](https://github.com/Mathieu-Beliveau/android-virtual-pen/blob/main/image.jpg?raw=true)
+![alt text](https://github.com/Mathieu-Beliveau/android-virtual-pen/blob/main/android-virtual-pen-linux-host.png?raw=true)
 
 Limitations:
 
