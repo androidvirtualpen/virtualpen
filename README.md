@@ -59,11 +59,16 @@ then log out and log. To restore your system in its previous state, simply run
 
 ## Usage
 
-Start the android application connected to your PC through usb. It should warn that the link with the PC is not yet established. For the link to be fully establish, you need to start the linux host which will set your device in accessory mode.
-On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown), enter the device's screen horizontal and vertical resolutions and then press "connect". Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok. 
-Once this done, you should be able to use your pen and see your PC screen cursor move as intended.
+Start the android application connected to your PC through usb. 
 
-Note that this software is still in beta stage and ought to be tested with various devices.
+It should warn that the link with the PC is not yet established. 
+
+For the link to be fully establish, you need to start the virtual-pen app on your PC which will set your device in accessory mode.
+
+On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown), enter the device's screen horizontal and vertical resolutions and then press "connect". Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok. 
+Once this done, you should be able to use your pen and see your PC cursor move as intended.
+
+Note that this software is still in beta stage and still ought to be tested with various devices.
 
 ## Building
 
