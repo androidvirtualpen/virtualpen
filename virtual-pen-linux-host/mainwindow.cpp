@@ -183,11 +183,11 @@ void MainWindow::loadDeviceConfig(){
 
 
 QVariant MainWindow::getSetting(string settingKey){
-    return settings->value(selectedDeviceIdentifier + settingKey);
+    return settings->value(QString::fromStdString(selectedDeviceIdentifier + settingKey));
 }
 
 void MainWindow::setSetting(string settingKey, QVariant value){
-    return settings->setValue(selectedDeviceIdentifier + settingKey, value);
+    return settings->setValue(QString::fromStdString(selectedDeviceIdentifier + settingKey), value);
 }
 
 void MainWindow::on_refreshUsbDevices_clicked()

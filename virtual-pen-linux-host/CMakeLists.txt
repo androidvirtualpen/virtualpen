@@ -33,12 +33,12 @@ add_executable(virtual-pen-linux-host ${PROJECT_SOURCES}
     virtualstylus.h virtualstylus.cpp
     linux-adk.h
     constants.h
-
-    displayscreentranslator.h displayscreentranslator.cpp
+    displayscreentranslator.h
+    displayscreentranslator.cpp
     pressuretranslator.h pressuretranslator.cpp
 )
 
-target_link_libraries(virtual-pen-linux-host PRIVATE Qt${QT_VERSION_MAJOR}::Widgets usb-1.0 X11 Xi Xrandr)
+target_link_libraries(virtual-pen-linux-host PRIVATE Qt${QT_VERSION_MAJOR}::Widgets usb-1.0)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
