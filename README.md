@@ -79,4 +79,9 @@ Then peform the actual build through:
 
 ``make``
 
+## Special Thanks
+
+This project was inspired by the very excellent [Weylus](https://github.com/H-M-H/Weylus) application and
+made significant use of the [Linux ADK](https://github.com/gibsson/linux-adk). Thanks to both devs and contributors!
+
 
