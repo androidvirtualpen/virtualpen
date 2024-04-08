@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "pen-input"
+rootProject.name = "virtual-pen"
 include(":app")

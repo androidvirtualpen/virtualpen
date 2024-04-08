@@ -1,4 +1,4 @@
-package com.pen_input;
+package com.virtual_pen;
 
 import static android.content.ContentValues.TAG;
 
@@ -46,7 +46,7 @@ public class UsbConnectedActivity extends AppCompatActivity {
         UsbAccessory[] usbAccessories = usbManager.getAccessoryList();
         if(usbAccessories != null && usbAccessories.length > 0){
             UsbAccessory usbAccessory = usbAccessories[0];
-            PendingIntent permissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+            PendingIntent permissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE);
             IntentFilter filter = new IntentFilter(ACTION_USB_PERMISSION);
             registerReceiver(usbReceiver, filter);
             usbManager.requestPermission(usbAccessory, permissionIntent);

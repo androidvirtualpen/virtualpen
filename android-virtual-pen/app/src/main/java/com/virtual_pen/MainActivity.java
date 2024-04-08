@@ -1,4 +1,4 @@
-package com.pen_input;
+package com.virtual_pen;
 
 import static android.content.ContentValues.TAG;
 

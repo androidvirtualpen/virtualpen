@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.pen_input"
+    namespace = "com.virtual_pen"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.pen_input"
+        applicationId = "com.virtual_pen"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

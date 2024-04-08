@@ -1,7 +1,5 @@
-package com.pen_input;
+package com.virtual_pen;
 
-import static android.view.MotionEvent.AXIS_DISTANCE;
-import static android.view.MotionEvent.AXIS_TILT;
 import static android.view.MotionEvent.TOOL_TYPE_STYLUS;
 
 import android.util.Log;
