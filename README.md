@@ -57,6 +57,14 @@ then log out and log. To restore your system in its previous state, simply run
 
 ``sudo rm /etc/udev/rules.d/60-android-virtual-pen.rules``
 
+## Usage
+
+Start the android application connected to your PC through usb. It should warn that the link with the PC is not yet established. For the link to be fully establish, you need to start the linux host which will set your device in accessory mode.
+On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown), enter the device's screen horizontal and vertical resolutions and then press "connect". Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok. 
+Once this done, you should be able to use your pen and see your PC screen cursor move as intended.
+
+Note that this software is still in beta stage and ought to be tested with various devices.
+
 ## Building
 
 For Android, the app has been build with the SDK Android 14 (API Level 34) and should readily build in Android Studio.
