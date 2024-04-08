@@ -1,0 +1,5 @@
+Package: virtual-pen
+Version: 0.1
+Architecture: amd64
+Maintainer: Mathieu Beliveau <mathieu.beliveau.1@gmail.com>
+Description: Host program for receiving pen input data the virtual-pen app.

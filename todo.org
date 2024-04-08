@@ -1,0 +1,11 @@
+* Virtual stylus emulator
+
+** TO DO
+   
+*** DONE Allow to select USB device   
+*** DONE Allow to specify tablet screen size
+*** DONE Allow to set pressure sensitivity
+*** DONE Allow to save device settings
+*** TODO Add tilt support
+*** TODO Add eraser support
+*** TODO Addresse on-off stroke issue

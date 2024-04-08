@@ -1,0 +1,6 @@
+#!/bin/sh
+
+groupadd -r uinput
+usermod -aG uinput $USER
+udevadm control --reload
+udevadm trigger

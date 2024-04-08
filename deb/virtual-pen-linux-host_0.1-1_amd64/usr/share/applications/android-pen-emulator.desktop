@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Android Pen Emulator
+Comment=Emulate android pen on your desktop
+TryExec=/usr/bin/pen-emulator-linux-host
+Exec=pen-emulator-linux-host
+Terminal=false
+Icon=android-pen-emulator
+Categories=Office;Graphics;Education;Presentation;

@@ -1,0 +1,16 @@
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+/.cmake/
+/.qt/
+/.qtc/
+/.qtc_clangd/
+/CMakeFiles/
+/pen-emulator-linux-host_autogen/
+/cmake_install.cmake
+/CMakeCache.txt
+/Testing/Temporary/LastTest.log
+/qtcsettings.cmake
+/pen-emulator-linux-host
