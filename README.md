@@ -24,19 +24,20 @@ What distinguishes this solution from others, is emphasis on low-latency to prov
 
 ### On Android
 
-Install the following APK:
-
-https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen.apk
+Install the following [APK](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen.apk)
 
 ### On Linux
 
+
 #### Ubuntu 22.04
 
+Download the following [.deb](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host_0.1-1_amd64.deb).
 
-TBD
+Install with: `sudo apt install ./virtual-pen-linux-host_0.1-1_amd64.deb`
 
 
-#### Flatpak (preferred method)
+
+#### Flatpak
 
 Until the software is out of beta stage, the flatpak package is distributed as a standalone bundle.
 
@@ -72,7 +73,7 @@ It should warn that the link with the PC is not yet established.
 
 For the link to be fully establish, you need to start the virtual-pen app on your PC which will set your device in accessory mode.
 
-On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown), enter the device's screen horizontal and vertical resolutions and then press "connect". Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok. 
+On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown) then enter the device's screen horizontal and vertical resolutions and then press "connect". Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok. 
 Once this done, you should be able to use your pen and see your PC cursor move as intended.
 
 Note that this software is still in beta stage and still ought to be tested with various devices.
