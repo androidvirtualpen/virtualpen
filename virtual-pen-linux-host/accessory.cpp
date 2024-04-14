@@ -27,6 +27,7 @@
 #include "virtualstylus.h"
 #include "accessory.h"
 #include "linux-adk.h"
+#include "mainwindow.h"
 
 
 using namespace std;
@@ -65,9 +66,9 @@ array<string, 5> readUntilDelimiter(unsigned char* dataBuffer, int size){
 
 void accessory_main(accessory_t * acc, VirtualStylus* virtualStylus)
 {
-	int ret = 0;
-	/* If we have an accessory interface */
-	if ((acc->pid != AOA_AUDIO_ADB_PID) && (acc->pid != AOA_AUDIO_PID)) {
+    int ret = 0;
+    /* If we have an accessory interface */
+    if ((acc->pid != AOA_AUDIO_ADB_PID) && (acc->pid != AOA_AUDIO_PID)) {
         unsigned char acc_buf[512];
 		int transferred, i;
 		int errors = 20;
@@ -98,13 +99,15 @@ void accessory_main(accessory_t * acc, VirtualStylus* virtualStylus)
 					sleep(1);
 			}
             extractAccessoryEventData(accessoryEventData, acc_buf, transferred);
-            // printf("Received %d bytes\n", transferred);
-            // for (i = 0; i < transferred;) {
-            //     printf("%#2.2x ", acc_buf[i++]);
-            //     if (!(i % 8))
-            //         printf("\n");
-            // }
-            // printf("\n");
+            if(MainWindow::isDebugMode){
+                printf("Received %d bytes\n", transferred);
+                for (i = 0; i < transferred;) {
+                    printf("%#2.2x ", acc_buf[i++]);
+                    if (!(i % 8))
+                        printf("\n");
+                }
+                printf("\n");
+            }
             virtualStylus->handleAccessoryEventData(accessoryEventData);
 		}
         delete accessoryEventData;

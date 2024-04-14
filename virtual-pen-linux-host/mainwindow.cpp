@@ -9,9 +9,10 @@
 #include "virtualstylus.h"
 using namespace QtConcurrent;
 using namespace std;
+bool MainWindow::isDebugMode{ false };
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)   
+    : QMainWindow(parent)
     , ui(new Ui::MainWindow)
     , selectedDeviceIdentifier("")
     , selectedDevice("")
@@ -85,7 +86,9 @@ void MainWindow::fetchUsbDevices(){
         libusb_device_handle *handle = NULL;
         err = libusb_open(dev, &handle);
         if (err) {
-            printf("Unable to open device...\n");
+            if(MainWindow::isDebugMode){
+                printf("Unable to open device...\n");
+            }
             continue;
         }
         unsigned char buf[100];

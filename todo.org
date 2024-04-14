@@ -6,6 +6,7 @@
 *** DONE Allow to specify tablet screen size
 *** DONE Allow to set pressure sensitivity
 *** DONE Allow to save device settings
-*** TODO Add tilt support
 *** DONE Add eraser support
-
+*** DONE Improve usb connection auth on android
+*** DONE Add flags to debugging mode
+*** TODO Add tilt support

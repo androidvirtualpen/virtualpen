@@ -23,6 +23,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    static bool isDebugMode;
     MainWindow(QWidget *parent = nullptr);
     void captureStylusInput();
     ~MainWindow();

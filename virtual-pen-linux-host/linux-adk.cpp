@@ -84,13 +84,10 @@ int capture(string selectedDevice, VirtualStylus* virtualStylus)
 	/* Disable buffering on stdout */
     setbuf(stdout, NULL);
     acc.device = selectedDevice.data();
-
-	if (!acc.manufacturer && !no_app)
-		acc.manufacturer = acc_default.manufacturer;
-	if (!acc.model && !no_app)
-		acc.model = acc_default.model;
-	if (!acc.version)
-		acc.version = acc_default.version;
+    acc.serial = acc_default.serial;
+    acc.manufacturer = acc_default.manufacturer;
+    acc.model = acc_default.model;
+    acc.version = acc_default.version;
 #ifdef WIN32
 	/* AOA 2.0 not supported on Windows (pthread/hid/audio deps) */
 	aoa_max_version = 1;
