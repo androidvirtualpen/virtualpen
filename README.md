@@ -32,9 +32,8 @@ https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/vi
 
 #### Ubuntu 22.04
 
-Download the [.deb](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host_0.1-1_amd64.deb)
 
-and install with: `sudo dpgk -i ./virtual-pen-linux-host_0.1-1_amd64.deb`
+TBD
 
 
 #### Flatpak (preferred method)
