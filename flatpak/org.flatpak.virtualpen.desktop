@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Virtual Pen
+Comment=Receives pen input from Android tablets
+TryExec=virtual-pen-linux-host
+Exec=virtual-pen-linux-host
+Terminal=false
+Icon=org.flatpak.virtualpen
+Categories=Office;Graphics;Education;Presentation;
