@@ -9,4 +9,9 @@
 *** DONE Add eraser support
 *** DONE Improve usb connection auth on android
 *** DONE Add flags to debugging mode
+*** TODO Package with flatpak, fix .deb
+Download the [.deb](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host_0.1-1_amd64.deb)
+
+and install with: `sudo dpgk -i ./virtual-pen-linux-host_0.1-1_amd64.deb`
+    
 *** TODO Add tilt support

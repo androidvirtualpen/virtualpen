@@ -1,4 +1,5 @@
 *~
 flatpak/.flatpak-builder
 flatpak/build-dir
+flatpak/export
 virtual-pen-linux-host
