@@ -22,40 +22,48 @@ What distinguishes this solution from others, is emphasis on low-latency to prov
 
 ## Installation
 
-For Android, install the following APK:
+### On Android
+
+Install the following APK:
 
 https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen.apk
 
-On Linux:
+### On Linux
 
-For debian-based distros, install the following .deb:
+#### Ubuntu 22.04
 
-https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host_0.1-1_amd64.deb
+Download the [.deb](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host_0.1-1_amd64.deb)
 
-Or place the following file on your PATH:
+and install with: `sudo dpgk -i ./virtual-pen-linux-host_0.1-1_amd64.deb`
 
-https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host
 
-If you are installing through the compiled binary (not the .deb), note that that the pen virtualization 
-is achieved through `uinput` which implies that `/dev/uinput` must be writeable by the user running the host application.
+#### Flatpak (preferred method)
 
-```
-sudo groupadd -r uinput
-sudo usermod -aG uinput $USER
-echo 'KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"' \
-| sudo tee /etc/udev/rules.d/60-android-virtual-pen.rules
-```
+Until the software is out of beta stage, the flatpak package is distributed as a standalone bundle.
 
-Then, either reboot, or run:
+Download the [flatpak bundle](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtualpen.flatpak)
 
-```
-sudo udevadm control --reload
-sudo udevadm trigger
-```
+Assuming you have flatpak installed, run the installation with:
 
-then log out and log. To restore your system in its previous state, simply run
+`flatpak install ./virtualpen.flatpak`
 
-``sudo rm /etc/udev/rules.d/60-android-virtual-pen.rules``
+Note that if you do not have the right kde sdk already installed, this installation step might require some time.
+
+Configure your system to allow your user to write to uinput by downloading the [setup script](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/setup.sh)
+
+Make it executable with: `chmod +x ./setup.sh` and run it as a sudoer: `sudo ./setup.sh`
+
+You can then launch the flatpak through: `flatpak run org.flatpak.virtualpen`
+
+
+#### Standalone Binary
+
+The [standalone binary](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen-linux-host) has been compiled against Qt 6.7 and requires libusb-1.0. Make sure these are available on your system.
+
+Configure your system to allow your user to write to uinput by downloading the [setup script](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/setup.sh)
+
+Make it executable with: `chmod +x ./setup.sh` and run it as a sudoer: `sudo ./setup.sh`
+
 
 ## Usage
 
