@@ -7,7 +7,7 @@
 #include <QtConcurrent/QtConcurrent>
 #include "displayscreentranslator.h"
 #include "pressuretranslator.h"
-#include </usr/include/libusb-1.0/libusb.h>
+#include <libusb-1.0/libusb.h>
 
 using namespace std;
 QT_BEGIN_NAMESPACE

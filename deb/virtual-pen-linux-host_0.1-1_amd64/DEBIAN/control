@@ -2,4 +2,5 @@ Package: virtual-pen
 Version: 0.1
 Architecture: amd64
 Maintainer: Mathieu Beliveau <mathieu.beliveau.1@gmail.com>
-Description: Host program for receiving pen input data the virtual-pen app.
+Description: Host program for receiving pen input data from the Android virtual-pen app.
+Depends: libqt6widgets6, qt6-qpa-plugins, libusb-1.0-0
