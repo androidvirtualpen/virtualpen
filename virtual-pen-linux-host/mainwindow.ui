@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Virtual Stylus Linux Host</string>
+   <string>Virtual Pen Linux Host</string>
   </property>
   <property name="windowIcon">
    <iconset resource="icon.qrc">

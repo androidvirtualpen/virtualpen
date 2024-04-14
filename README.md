@@ -16,6 +16,7 @@ What distinguishes this solution from others, is emphasis on low-latency to prov
 
 ## Limitations
 
+- No support for Wayland at the moment (only X11 is supported)
 - Can only target one screen on the PC host (primary screen)  
 - Pen tilt is currently not supported (please do ask if you need this feature)
 - No support on host side for MacOS and Windows
