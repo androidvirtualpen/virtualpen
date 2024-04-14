@@ -1,0 +1,37 @@
+{
+    "id": "org.flatpak.virtualpen",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.6",
+    "sdk": "org.kde.Sdk",
+    "command": "virtual-pen-linux-host",
+    "finish-args": [
+	"--socket=x11",
+	"--socket=fallback-x11",
+	"--socket=wayland",
+	"--device=dri",
+	"--filesystem=home",
+	"--device=all",
+	"--filesystem=/dev/uinput"
+    ],    
+    "modules":[
+	{	    
+	    "name": "virtualpenlinuxhost",
+	    "buildsystem": "simple",
+	    "build-commands": [
+		"install -D virtual-pen-linux-host /app/bin/virtual-pen-linux-host",
+		"install -D libusb-1.0.so.0 /app/lib/libusb-1.0.so.0"
+	    ],
+	    "sources": [
+		{
+		    "type": "file",
+		    "path": "virtual-pen-linux-host"		    
+		},
+		{
+		    "type": "file",
+		    "path": "libusb-1.0.so.0"		    
+		}
+	    ]
+	    
+	}
+    ]
+}
