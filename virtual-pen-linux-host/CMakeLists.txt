@@ -36,6 +36,7 @@ add_executable(virtual-pen-linux-host ${PROJECT_SOURCES}
     displayscreentranslator.h
     displayscreentranslator.cpp
     pressuretranslator.h pressuretranslator.cpp
+    icon.qrc
 )
 
 target_link_libraries(virtual-pen-linux-host PRIVATE Qt${QT_VERSION_MAJOR}::Widgets usb-1.0)

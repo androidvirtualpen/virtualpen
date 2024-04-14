@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Virtual Stylus Linux Host</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="icon.qrc">
+    <normaloff>:/images/virtual-pen.svg</normaloff>:/images/virtual-pen.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QListWidget" name="usbDevicesListWidget">
     <property name="geometry">
@@ -218,6 +222,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
  <connections/>
 </ui>
