@@ -11,6 +11,7 @@
 	"--device=dri",
 	"--filesystem=home",
 	"--device=all",
+	"--share=network",	
 	"--filesystem=/dev/uinput"
     ],    
     "modules":[
