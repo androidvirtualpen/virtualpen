@@ -7,10 +7,12 @@ What distinguishes this solution from others, is emphasis on low-latency to prov
 
 - Adjustable pen pressure threshold such that you can move the pen-cursor without triggering an unintended click/draw action
 - Adjustable pen pressure sensitivity such that you can customize the force needed to be applied
+- Eraser support
 - Switch between stretched and fixed display mode
   - In stretched mode, the android device screen is stretched and completely mapped to your PC primary screen. Note that this is required to fully reach the boundaries of your PC screen from your device but causes some slight distortion if the screen ratios (android vs PC) are not the same.
   - In fixed mode, if the android device screen resolution fits into your PC screen, it is centered and mapped on that latter screen at a 1:1 ratio. This mode should incurr no distortion.
 - Detect available usb devices and automatically save your settings for each
+- Supports both X11 and Wayland
 
 ![alt text](https://github.com/Mathieu-Beliveau/android-virtual-pen/blob/main/android-virtual-pen-linux-host.png?raw=true)
 
