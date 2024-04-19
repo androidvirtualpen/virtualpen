@@ -1,4 +1,11 @@
 *~
+.#*
+.lock
 flatpak/.flatpak-builder
-flatpak/build-dir
+flatpak/builddir
 flatpak/export
+flatpak/repo
+libusb-1.0.so.0
+virtual-pen-linux-host
+*.zip
+*.dm
