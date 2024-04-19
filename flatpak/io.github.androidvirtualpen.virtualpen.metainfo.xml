@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.flatpak.virtualpen</id>
+  <id>io.github.androidvirtualpen.virtualpen</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-only</project_license>
   <name>Android Virtual Pen</name>
@@ -21,8 +21,8 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
     <li>Supports both X11 and Wayland</li>    
   </ul>
   </description>
-  <launchable type="desktop-id">org.flatpak.virtualpen.desktop</launchable>
-  <icon type="stock">org.flatpak.virtualpen</icon>
+  <launchable type="desktop-id">io.github.androidvirtualpen.virtualpen.desktop</launchable>
+  <icon type="stock">io.github.androidvirtualpen.virtualpen</icon>
   <branding>
     <color type="primary" scheme_preference="light">#ff00ff</color>
     <color type="primary" scheme_preference="dark">#993d3d</color>
@@ -41,10 +41,10 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
     <keyword>Intuos</keyword>
     <keyword>emulator</keyword>
   </keywords>
-  <url type="homepage">https://github.com/Mathieu-Beliveau/android-virtual-pen</url>
+  <url type="homepage">https://github.com/androidvirtualpen/virtualpen</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://github.com/Mathieu-Beliveau/android-virtual-pen/blob/main/android-virtual-pen-linux-host.png?raw=true</image>
+      <image>https://raw.githubusercontent.com/Mathieu-Beliveau/android-virtual-pen/main/android-virtual-pen-linux-host.png</image>
       <caption>Application running on KDE Neon</caption>
     </screenshot>
   </screenshots>

@@ -1,5 +1,5 @@
 {
-    "id": "org.flatpak.virtualpen",
+    "id": "io.github.androidvirtualpen.virtualpen",
     "runtime": "org.kde.Platform",
     "runtime-version": "6.7",
     "sdk": "org.kde.Sdk",
@@ -19,27 +19,27 @@
 	    "build-commands": [
 		"install -Dvm 755 virtual-pen-linux-host -t /app/bin/",
 		"install -Dvm 644 libusb-1.0.so.0 -t /app/lib/",
-		"install -Dvm 644 org.flatpak.virtualpen.metainfo.xml -t /app/share/metainfo",
-		"install -Dvm 644 org.flatpak.virtualpen.desktop -t /app/share/applications/",
-		"install -Dvm 644 org.flatpak.virtualpen.svg -t /app/share/icons/hicolor/scalable/apps/"
+		"install -Dvm 644 io.github.androidvirtualpen.virtualpen.metainfo.xml -t /app/share/metainfo",
+		"install -Dvm 644 io.github.androidvirtualpen.virtualpen.desktop -t /app/share/applications/",
+		"install -Dvm 644 io.github.androidvirtualpen.virtualpen.svg -t /app/share/icons/hicolor/scalable/apps/"
 	    ],
 	    "sources": [
 		{
 		    "type": "archive",
-		    "url": "https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/virtual-pen.zip",
+		    "url": "https://github.com/androidvirtualpen/virtualpen/releases/download/0.1/virtual-pen.zip",
 		    "sha256": "add43fdb9b711af5c840f4f4d718dbfe18dafbef21a280cfae91edd71d4b6e12"
 		},
 		{
 		    "type": "file",
-		    "path": "org.flatpak.virtualpen.svg"		    
+		    "path": "io.github.androidvirtualpen.virtualpen.svg"		    
 		},		
 		{
 		    "type": "file",
-		    "path": "org.flatpak.virtualpen.desktop"		    
+		    "path": "io.github.androidvirtualpen.virtualpen.desktop"		    
 		},
 		{
 		    "type": "file",
-		    "path": "org.flatpak.virtualpen.metainfo.xml"		    
+		    "path": "io.github.androidvirtualpen.virtualpen.metainfo.xml"		    
 		}
 
 	    ]
