@@ -4,6 +4,7 @@
 #include <QListWidgetItem>
 #include <QMainWindow>
 #include <QMap>
+#include <qstylefactory.h>
 #include <QtConcurrent/QtConcurrent>
 #include "displayscreentranslator.h"
 #include "pressuretranslator.h"
@@ -46,12 +47,17 @@ private slots:
 
     void on_refreshUsbDevices_clicked();
 
+    void on_deviceXSize_selectionChanged();
+
+    void on_deviceYSize_selectionChanged();
+
 private:
     const string y_device_setting_key = "/y_size";
     const string x_device_setting_key = "/x_size";
     const string min_pressure_setting_key = "/min_pressure";
     const string pressure_sensitivity_setting_key = "/pressure_sensitivity";
     const string display_style_setting_key = "/display_style";
+    const int max_device_size = 999999999;
 
     Ui::MainWindow *ui;
     QSettings * settings;
@@ -62,6 +68,7 @@ private:
     string selectedDeviceIdentifier;
     string selectedDevice;
     QVariant getSetting(string settingKey);
+    QVariant getSetting(string settingKey, QVariant defaultValue);
     void initDisplayStyles();
     void setSetting(string settingKey, QVariant value);
     void fetchUsbDevices();
@@ -69,7 +76,6 @@ private:
     bool canConnectUsb();
     void updateUsbConnectButton();
     void loadDeviceConfig();
-
-
+    void manageInputBoxStyle(QLineEdit * inputBox);
 };
 #endif // MAINWINDOW_H

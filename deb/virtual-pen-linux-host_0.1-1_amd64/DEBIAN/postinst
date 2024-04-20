@@ -1,6 +1,5 @@
 #!/bin/sh
-
-groupadd -r uinput
-usermod -aG uinput $USER
+groupadd -r virtualpen
+usermod -aG virtualpen $USER
 udevadm control --reload
 udevadm trigger

@@ -3,6 +3,7 @@
 #include <linux/uinput.h>
 #include<unistd.h>
 #include <sstream>
+#include <QStyleFactory>
 #include <QtConcurrent/QtConcurrent>
 #include </usr/include/libusb-1.0/libusb.h>
 #include "linux-adk.h"
@@ -20,8 +21,10 @@ MainWindow::MainWindow(QWidget *parent)
     , displayScreenTranslator(new DisplayScreenTranslator())
     , pressureTranslator(new PressureTranslator())
 {
-    settings = new QSettings("me", "android-pen-emulator");
+    settings = new QSettings("com.github.androidvirtualpen", "virtualpen1");
     ui->setupUi(this);
+    ui->deviceXSize->setValidator(new QIntValidator(1, max_device_size, this));
+    ui->deviceYSize->setValidator(new QIntValidator(1, max_device_size, this));
     initDisplayStyles();
     libUsbContext = libusb_init(NULL);
     updateUsbConnectButton();
@@ -52,6 +55,8 @@ void MainWindow::on_usbDevicesListWidget_itemClicked(QListWidgetItem *item){
 
 bool MainWindow::canConnectUsb(){
     if(selectedDevice != "" &&
+        ui->deviceXSize->hasAcceptableInput() &&
+        ui->deviceYSize->hasAcceptableInput() &&
         displayScreenTranslator->size_x != -1 &&
         displayScreenTranslator->size_y != -1){
         return true;
@@ -140,6 +145,15 @@ void MainWindow::on_deviceYSize_editingFinished()
     updateUsbConnectButton();
 }
 
+void MainWindow::manageInputBoxStyle(QLineEdit * inputBox){
+    if(inputBox->hasAcceptableInput()){
+        inputBox->setStyleSheet("QLineEdit{border: 1px solid white}");
+    }
+    else{
+        inputBox->setStyleSheet("QLineEdit{border: 1px solid red}");
+    }
+}
+
 
 void MainWindow::on_displayStyleComboBox_currentIndexChanged(int index)
 {
@@ -176,17 +190,24 @@ void MainWindow::loadDeviceConfig(){
     }
 
     ui->displayStyleComboBox->activated(0);
-    pressureTranslator->minPressure = getSetting(min_pressure_setting_key).toInt();
+    pressureTranslator->minPressure = getSetting(min_pressure_setting_key, QVariant::fromValue(10)).toInt();
     ui->minimumPressureSlider->setValue(pressureTranslator->minPressure);
-    pressureTranslator->sensitivity = getSetting(pressure_sensitivity_setting_key).toInt();
+    pressureTranslator->sensitivity = getSetting(pressure_sensitivity_setting_key, QVariant::fromValue(50)).toInt();
     ui->pressureSensitivitySlider->setValue(pressureTranslator->sensitivity);
     ui->deviceXSize->setText(QString::number(displayScreenTranslator->size_x));
     ui->deviceYSize->setText(QString::number(displayScreenTranslator->size_y));
+    on_deviceXSize_selectionChanged();
+    on_deviceYSize_selectionChanged();
 }
-
 
 QVariant MainWindow::getSetting(string settingKey){
     return settings->value(QString::fromStdString(selectedDeviceIdentifier + settingKey));
+}
+
+
+QVariant MainWindow::getSetting(string settingKey, QVariant defaultValue){
+    QVariant value = getSetting(settingKey);
+    return value.isNull() ? defaultValue : value;
 }
 
 void MainWindow::setSetting(string settingKey, QVariant value){
@@ -210,4 +231,16 @@ MainWindow::~MainWindow()
 
 
 
+void MainWindow::on_deviceXSize_selectionChanged()
+{
+    manageInputBoxStyle(ui->deviceXSize);
+    updateUsbConnectButton();
+}
+
+
+void MainWindow::on_deviceYSize_selectionChanged()
+{
+        manageInputBoxStyle(ui->deviceYSize);
+        updateUsbConnectButton();
+}
 

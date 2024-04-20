@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>764</width>
-    <height>325</height>
+    <width>803</width>
+    <height>363</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>803</width>
+    <height>363</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>803</width>
+    <height>363</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Android Virtual Pen</string>
@@ -90,20 +102,20 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>110</y>
+      <y>130</y>
       <width>311</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Stylus Minimum Pressure</string>
+     <string>Stylus Minimum Pressure Threshold</string>
     </property>
    </widget>
    <widget class="QSlider" name="minimumPressureSlider">
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>140</y>
+      <y>160</y>
       <width>311</width>
       <height>16</height>
      </rect>
@@ -138,7 +150,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>220</y>
+      <y>270</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -148,7 +160,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>220</y>
+      <y>270</y>
       <width>211</width>
       <height>17</height>
      </rect>
@@ -161,7 +173,7 @@
     <property name="geometry">
      <rect>
       <x>640</x>
-      <y>250</y>
+      <y>300</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -174,7 +186,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>250</y>
+      <y>300</y>
       <width>211</width>
       <height>17</height>
      </rect>
@@ -187,7 +199,7 @@
     <property name="geometry">
      <rect>
       <x>610</x>
-      <y>180</y>
+      <y>230</y>
       <width>121</width>
       <height>25</height>
      </rect>
@@ -197,7 +209,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>180</y>
+      <y>230</y>
       <width>181</width>
       <height>17</height>
      </rect>
@@ -217,6 +229,118 @@
     </property>
     <property name="text">
      <string>Refresh</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>100</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>100%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>100</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>200%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>100</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>270</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>300</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>px</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>180</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>180</y>
+      <width>51</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>100%</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
   </widget>
