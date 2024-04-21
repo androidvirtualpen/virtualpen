@@ -51,10 +51,6 @@ Assuming you have flatpak installed, run the installation with:
 
 Note that if you do not have the right kde sdk already installed, this installation step might require some time.
 
-Configure your system to allow your user to write to uinput by downloading the [setup script](https://github.com/Mathieu-Beliveau/android-virtual-pen/releases/download/0.1/setup.sh)
-
-Make it executable with: `chmod +x ./setup.sh` and run it as a sudoer: `sudo ./setup.sh`
-
 You can then launch the flatpak through: `flatpak run org.flatpak.virtualpen`
 
 
