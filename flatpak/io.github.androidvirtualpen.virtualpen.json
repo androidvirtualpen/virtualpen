@@ -27,7 +27,7 @@
 		{
 		    "type": "archive",
 		    "url": "https://github.com/androidvirtualpen/virtualpen/releases/download/0.1/android-virtual-pen.zip",
-		    "sha256": "af00c058bfec7f761f14be6f5908f24bf35b225f769137623bfc99e6b14898c6"
+		    "sha256": "d3ef41dbbb12d546d4bb5c1ac859f8b655996ef9f752ae8f5a2f43a8005f898c"
 		},
 		{
 		    "type": "file",
