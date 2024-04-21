@@ -4,9 +4,10 @@
 #include <QListWidgetItem>
 #include <QMainWindow>
 #include <QMap>
-#include <qstylefactory.h>
+#include <QMessageBox>
 #include <QtConcurrent/QtConcurrent>
 #include "displayscreentranslator.h"
+#include "filepermissionvalidator.h"
 #include "pressuretranslator.h"
 #include <libusb-1.0/libusb.h>
 
@@ -52,14 +53,19 @@ private slots:
     void on_deviceYSize_selectionChanged();
 
 private:
+    const QString setting_org = "com.github.androidvirtualpen";
+    const QString setting_app = "virtualpen";
     const string y_device_setting_key = "/y_size";
     const string x_device_setting_key = "/x_size";
     const string min_pressure_setting_key = "/min_pressure";
     const string pressure_sensitivity_setting_key = "/pressure_sensitivity";
     const string display_style_setting_key = "/display_style";
+    QDialog * dialog;
+    FilePermissionValidator * filePermissionValidator;
     const int max_device_size = 999999999;
 
     Ui::MainWindow *ui;
+    QMessageBox * messageBox;
     QSettings * settings;
     DisplayScreenTranslator * displayScreenTranslator;
     PressureTranslator * pressureTranslator;
@@ -77,5 +83,9 @@ private:
     void updateUsbConnectButton();
     void loadDeviceConfig();
     void manageInputBoxStyle(QLineEdit * inputBox);
+    void displayUDevPermissionFixIfNeeded();
+    void displayFixForUDevPermissions();
+    bool canWriteToFile(QString path);
+    bool canWriteToAnyUsbDevice();
 };
 #endif // MAINWINDOW_H

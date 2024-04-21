@@ -1,2 +1,2 @@
-SUBSYSTEM=="usb", MODE="0777", GROUP="virtualpen"
+SUBSYSTEM=="usb", MODE="0777", GROUP="plugdev"
 KERNEL=="uinput", MODE="0777", GROUP="virtualpen", OPTIONS+="static_node=uinput"

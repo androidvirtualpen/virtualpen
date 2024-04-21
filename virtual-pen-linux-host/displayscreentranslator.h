@@ -1,7 +1,6 @@
 #ifndef DISPLAYSCREENTRANSLATOR_H
 #define DISPLAYSCREENTRANSLATOR_H
 #include "accessory.h"
-
 #include <QScreen>
 
 enum DisplayStyle{

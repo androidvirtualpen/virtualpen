@@ -17,6 +17,7 @@ set(PROJECT_SOURCES
         mainwindow.cpp        
         mainwindow.h
         mainwindow.ui
+        udevdialog.ui
         accessory.cpp
         hid.cpp
         linux-adk.cpp
@@ -37,6 +38,9 @@ add_executable(virtual-pen-linux-host ${PROJECT_SOURCES}
     displayscreentranslator.cpp
     pressuretranslator.h pressuretranslator.cpp
     icon.qrc
+    filepermissionvalidator.h filepermissionvalidator.cpp
+    udevdialog.ui
+
 )
 
 target_link_libraries(virtual-pen-linux-host PRIVATE Qt${QT_VERSION_MAJOR}::Widgets usb-1.0)

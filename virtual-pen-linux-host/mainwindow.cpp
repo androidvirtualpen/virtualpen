@@ -1,15 +1,19 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "./ui_udevdialog.h"
 #include <linux/uinput.h>
-#include<unistd.h>
-#include <sstream>
+#include <unistd.h>
+#include <unistd.h>
 #include <QStyleFactory>
+#include <QDialog>
+#include <QMessageBox>
 #include <QtConcurrent/QtConcurrent>
 #include </usr/include/libusb-1.0/libusb.h>
 #include "linux-adk.h"
 #include "virtualstylus.h"
 using namespace QtConcurrent;
 using namespace std;
+namespace fs = std::filesystem;
 bool MainWindow::isDebugMode{ false };
 
 MainWindow::MainWindow(QWidget *parent)
@@ -21,7 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
     , displayScreenTranslator(new DisplayScreenTranslator())
     , pressureTranslator(new PressureTranslator())
 {
-    settings = new QSettings("com.github.androidvirtualpen", "virtualpen1");
+    settings = new QSettings(setting_org, setting_app);
+    filePermissionValidator = new FilePermissionValidator();
+    dialog = new QDialog();
     ui->setupUi(this);
     ui->deviceXSize->setValidator(new QIntValidator(1, max_device_size, this));
     ui->deviceYSize->setValidator(new QIntValidator(1, max_device_size, this));
@@ -39,7 +45,7 @@ void MainWindow::captureStylusInput(){
 
 void MainWindow::populateUsbDevicesList(){
     ui->usbDevicesListWidget->clear();
-    fetchUsbDevices();
+    fetchUsbDevices();    
     foreach(const string key, usbDevices->keys()){
         ui->usbDevicesListWidget->addItem(QString::fromStdString(key));
     }
@@ -72,6 +78,7 @@ void MainWindow::updateUsbConnectButton(){
 
 
 void MainWindow::on_connectUsbButton_clicked(){
+    displayUDevPermissionFixIfNeeded();
     QFuture<void> ignored = QtConcurrent::run([this] { return captureStylusInput(); });
     ui->connectionStatusLabel->setText(QString::fromUtf8("Connected!"));
     ui->connectUsbButton->setEnabled(false);
@@ -216,19 +223,33 @@ void MainWindow::setSetting(string settingKey, QVariant value){
 
 void MainWindow::on_refreshUsbDevices_clicked()
 {
-    populateUsbDevicesList();
+    populateUsbDevicesList();    
+}
+
+void MainWindow::displayUDevPermissionFixIfNeeded(){
+    if(!filePermissionValidator->canWriteToFile("/dev/uinput") || !canWriteToAnyUsbDevice()){
+        displayFixForUDevPermissions();
+    }
+}
+
+bool MainWindow::canWriteToAnyUsbDevice(){
+    if(!usbDevices->empty()){
+        return filePermissionValidator->anyFileWriteableRecursive("/dev/bus/usb/001");
+    }
+    else{
+        return true;
+    }
+
 }
 
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-    delete usbDevices;
-    delete displayScreenTranslator;
-    delete pressureTranslator;
-    delete settings;
-}
+void MainWindow::displayFixForUDevPermissions(){
 
+    QWidget widget;
+    Ui::udevdialog udevDialog;
+    udevDialog.setupUi(dialog);
+    dialog->exec();
+}
 
 
 void MainWindow::on_deviceXSize_selectionChanged()
@@ -242,5 +263,16 @@ void MainWindow::on_deviceYSize_selectionChanged()
 {
         manageInputBoxStyle(ui->deviceYSize);
         updateUsbConnectButton();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+    delete usbDevices;
+    delete displayScreenTranslator;
+    delete pressureTranslator;
+    delete settings;
+    delete messageBox;
+    delete filePermissionValidator;
 }
 
