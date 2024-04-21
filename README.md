@@ -14,7 +14,7 @@ What distinguishes this solution from others, is emphasis on low-latency to prov
 - Detect available usb devices and automatically save your settings for each
 - Supports both X11 and Wayland
 
-![alt text](https://github.com/Mathieu-Beliveau/android-virtual-pen/blob/main/android-virtual-pen-linux-host.png?raw=true)
+![alt text](https://github.com/androidvirtualpen/virtualpen/blob/main/android-virtual-pen-screenshot.png?raw=true)
 
 ## Limitations
 

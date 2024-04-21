@@ -44,7 +44,7 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
   <url type="homepage">https://github.com/androidvirtualpen/virtualpen</url>
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/Mathieu-Beliveau/android-virtual-pen/main/android-virtual-pen-linux-host.png</image>
+      <image>https://raw.githubusercontent.com/Mathieu-Beliveau/android-virtual-pen/main/android-virtual-pen-screenshot.png</image>
       <caption>Application running on KDE Neon</caption>
     </screenshot>
   </screenshots>
