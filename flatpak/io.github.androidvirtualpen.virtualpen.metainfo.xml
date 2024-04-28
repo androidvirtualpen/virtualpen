@@ -9,18 +9,17 @@
     <name>Mathieu Beliveau</name>
   </developer>
   <description>
-    <p>Android Virtual Pen allows to send pen input data from your android device to a pc host where it emulates a virtual pen. What distinguishes this solution from others, is emphasis on low-latency to provide the best drawing experience.
-    The Android app (.apk) can be found at: https://github.com/androidvirtualpen/virtualpen/releases/download/0.1/virtual-pen.apk</p>
-  <p>Features</p>
-  <ul>
-    <li>Adjustable pen pressure threshold such that you can move the pen-cursor without triggering an unintended click/draw action</li>
-    <li>Adjustable pen pressure sensitivity such that you can customize the force needed to be applied</li>
-    <li>Eraser support</li>
-    <li>Switch between stretched and fixed display mode. In stretched mode, the android device screen is stretched and completely mapped to your PC primary screen. Note that this is required to fully reach the boundaries of your PC screen from your device but causes some slight distortion if the screen ratios (android vs PC) are not the same.
+    <p>Android Virtual Pen allows to send pen input data from your android device to a pc host where it emulates a virtual pen. What distinguishes this solution from others, is emphasis on low-latency to provide the best drawing experience.</p>
+    <p>Features</p>
+    <ul>
+      <li>Adjustable pen pressure threshold such that you can move the pen-cursor without triggering an unintended click/draw action</li>
+      <li>Adjustable pen pressure sensitivity such that you can customize the force needed to be applied</li>
+      <li>Eraser support</li>
+      <li>Switch between stretched and fixed display mode. In stretched mode, the android device screen is stretched and completely mapped to your PC primary screen. Note that this is required to fully reach the boundaries of your PC screen from your device but causes some slight distortion if the screen ratios (android vs PC) are not the same.
 In fixed mode, if the android device screen resolution fits into your PC screen, the android device display is centered and mapped on the host at a 1:1 ratio. This mode should incurr no distortion.</li>
-    <li>Detects available usb devices and automatically save your settings for each</li>
-    <li>Supports both X11 and Wayland</li>    
-  </ul>
+      <li>Detects available usb devices and automatically save your settings for each</li>
+      <li>Supports both X11 and Wayland</li>
+    </ul>
   </description>
   <launchable type="desktop-id">io.github.androidvirtualpen.virtualpen.desktop</launchable>
   <icon type="stock">io.github.androidvirtualpen.virtualpen</icon>
@@ -32,7 +31,7 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
   <categories>
     <category>Office</category>
     <category>Graphics</category>
-    <category>Education</category>    
+    <category>Education</category>
     <category>Presentation</category>
   </categories>
   <keywords>
@@ -52,7 +51,7 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
   <releases>
     <release version="0.0.1" date="2024-04-18">
       <description>
-	<p>First beta version</p>
+        <p>First beta version</p>
       </description>
     </release>
   </releases>
