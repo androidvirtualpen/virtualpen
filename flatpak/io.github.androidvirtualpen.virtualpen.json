@@ -8,31 +8,28 @@
 		"--socket=wayland",
 		"--socket=fallback-x11",
 		"--share=ipc",
-		"--filesystem=home",
 		"--device=all",
 		"--share=network"
 	],
 	"modules": [
 		"shared-modules/libusb/libusb.json",
 		{
-			"name": "libusb-1.0"
-		},
-		{
 			"name": "virtualpenlinuxhost",
-			"buildsystem": "cmake",
+			"buildsystem": "cmake-ninja",
 			"subdir": "virtual-pen-linux-host",
-			"build-commands": [
-				"install -Dvm 644 flatpak/io.github.androidvirtualpen.virtualpen.metainfo.xml -t /app/share/metainfo",
-				"install -Dvm 644 flatpak/io.github.androidvirtualpen.virtualpen.desktop -t /app/share/applications/",
-				"install -Dvm 644 flatpak/io.github.androidvirtualpen.virtualpen.svg -t /app/share/icons/hicolor/scalable/apps/"
+			"post-install": [
+				"install -Dvm 644 ../flatpak/io.github.androidvirtualpen.virtualpen.metainfo.xml -t /app/share/metainfo",
+				"install -Dvm 644 ../flatpak/io.github.androidvirtualpen.virtualpen.desktop -t /app/share/applications/",
+				"install -Dvm 644 ../flatpak/io.github.androidvirtualpen.virtualpen.svg -t /app/share/icons/hicolor/scalable/apps/"
 			],
 			"sources": [
 				{
 					"type": "git",
-					"url": "https://github.com/Mathieu-Beliveau/android-virtual-pen.git",
-					"commit": "7a4a8dce8e7990d1acfcec48c4969fe85d535c22"
+					"url": "https://github.com/androidvirtualpen/virtualpen.git",
+					"commit": "2fd62285c2ea14a8b2798d073a0d9506477620b8"
 				}
 			]
 		}
+
 	]
 }
