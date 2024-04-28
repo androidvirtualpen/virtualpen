@@ -66,9 +66,9 @@ install(TARGETS virtual-pen-linux-host
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-install(FILES resources/io.github.androidvirtualpen.virtualpen.desktop DESTINATION ${$XDG_DATA_DIRS}/applications/)
-install(FILES resources/io.github.androidvirtualpen.virtualpen.svg DESTINATION ${$XDG_DATA_DIRS}/icons/hicolor/scalable/apps/)
-install(FILES resources/io.github.androidvirtualpen.virtualpen.metainfo.xml DESTINATION ${$XDG_DATA_DIRS}/metainfo/)
+install(FILES resources/io.github.androidvirtualpen.virtualpen.desktop DESTINATION share/applications/)
+install(FILES resources/io.github.androidvirtualpen.virtualpen.svg DESTINATION share/icons/hicolor/scalable/apps/)
+install(FILES resources/io.github.androidvirtualpen.virtualpen.metainfo.xml DESTINATION share/metainfo/)
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(virtual-pen-linux-host)
