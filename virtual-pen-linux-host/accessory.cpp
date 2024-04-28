@@ -23,7 +23,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <iostream>
-#include <libusb-1.0/libusb.h>
+#include "libusb-1.0/libusb.h"
 #include "virtualstylus.h"
 #include "accessory.h"
 #include "linux-adk.h"

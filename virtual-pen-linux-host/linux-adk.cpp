@@ -24,7 +24,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <linux/uinput.h>
-#include </usr/include/libusb-1.0/libusb.h>
+#include "libusb-1.0/libusb.h"
 #include "linux-adk.h"
 #include "virtualstylus.h"
 

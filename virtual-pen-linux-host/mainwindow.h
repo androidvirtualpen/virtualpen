@@ -9,7 +9,6 @@
 #include "displayscreentranslator.h"
 #include "filepermissionvalidator.h"
 #include "pressuretranslator.h"
-#include <libusb-1.0/libusb.h>
 
 using namespace std;
 QT_BEGIN_NAMESPACE
