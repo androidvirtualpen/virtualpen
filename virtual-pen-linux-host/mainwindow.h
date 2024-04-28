@@ -51,6 +51,8 @@ private slots:
 
     void on_deviceYSize_selectionChanged();
 
+    void on_connectUsbButton_2_clicked();
+
 private:
     const QString setting_org = "com.github.androidvirtualpen";
     const QString setting_app = "virtualpen";

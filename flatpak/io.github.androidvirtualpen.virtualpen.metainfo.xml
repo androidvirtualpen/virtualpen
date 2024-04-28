@@ -5,9 +5,7 @@
   <project_license>GPL-3.0-only</project_license>
   <name>Android Virtual Pen</name>
   <summary>Capture android pen input on Linux</summary>
-  <developer id="tld.vendor">
-    <name>Mathieu Beliveau</name>
-  </developer>
+  <developer_name>Mathieu Beliveau</developer_name>
   <description>
     <p>Android Virtual Pen allows to send pen input data from your android device to a pc host where it emulates a virtual pen. What distinguishes this solution from others, is emphasis on low-latency to provide the best drawing experience.</p>
     <p>Features</p>

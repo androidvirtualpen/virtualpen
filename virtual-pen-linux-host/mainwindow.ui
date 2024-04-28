@@ -53,7 +53,7 @@
      <string>Connect</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="usbDevicesLabel">
     <property name="geometry">
      <rect>
       <x>30</x>
@@ -85,7 +85,7 @@
      <enum>Qt::Orientation::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="stylusPressureSentitivityLabel">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -98,7 +98,7 @@
      <string>Stylus Pressure Sensitivity</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="stylusMinimumPressureLabel">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -156,7 +156,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="deviceHResolutionLabel">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -182,7 +182,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="deviceVResolutionLabel">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -205,7 +205,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="displayStyleLabel">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -231,7 +231,7 @@
      <string>Refresh</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
+   <widget class="QLabel" name="pressureSensitivityDefaultLabel">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -247,7 +247,7 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="pressureSensitivityMaxLabel">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -263,7 +263,7 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_10">
+   <widget class="QLabel" name="pressureSensitivityZeroLabel">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -279,7 +279,7 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_11">
+   <widget class="QLabel" name="HResolutionPxLabel">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -295,7 +295,7 @@
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_12">
+   <widget class="QLabel" name="VResolutionPxLabel">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -311,7 +311,7 @@
      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_13">
+   <widget class="QLabel" name="minimumPressureZeroLabel">
     <property name="geometry">
      <rect>
       <x>400</x>
@@ -327,7 +327,7 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_14">
+   <widget class="QLabel" name="minimumPressureMaxLabel">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -341,6 +341,19 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="connectUsbButton_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>331</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Get Android App (.apk file)</string>
     </property>
    </widget>
   </widget>

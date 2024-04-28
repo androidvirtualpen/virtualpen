@@ -8,6 +8,7 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QtConcurrent/QtConcurrent>
+#include <QDesktopServices>
 #include <libusb-1.0/libusb.h>
 #include "linux-adk.h"
 #include "virtualstylus.h"
@@ -227,14 +228,16 @@ void MainWindow::on_refreshUsbDevices_clicked()
 }
 
 void MainWindow::displayUDevPermissionFixIfNeeded(){
-    if(!filePermissionValidator->canWriteToFile("/dev/uinput") || !canWriteToAnyUsbDevice()){
+    bool canWriteToUInput = filePermissionValidator->canWriteToFile("/dev/uinput");
+    bool canWriteToUsbDevice = canWriteToAnyUsbDevice();
+    if(!canWriteToUInput || !canWriteToUsbDevice){
         displayFixForUDevPermissions();
     }
 }
 
 bool MainWindow::canWriteToAnyUsbDevice(){
     if(!usbDevices->empty()){
-        return filePermissionValidator->anyFileWriteableRecursive("/dev/bus/usb/001");
+        return filePermissionValidator->anyFileWriteableRecursive("/dev/bus/usb/");
     }
     else{
         return true;
@@ -265,6 +268,12 @@ void MainWindow::on_deviceYSize_selectionChanged()
         updateUsbConnectButton();
 }
 
+void MainWindow::on_connectUsbButton_2_clicked()
+{
+    QString link = "https://github.com/androidvirtualpen/virtualpen/releases/download/0.1/virtual-pen.apk";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -272,7 +281,9 @@ MainWindow::~MainWindow()
     delete displayScreenTranslator;
     delete pressureTranslator;
     delete settings;
-    delete messageBox;
     delete filePermissionValidator;
 }
+
+
+
 

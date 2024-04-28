@@ -10,6 +10,9 @@ bool FilePermissionValidator::anyFileWriteableRecursive(std::string path){
     for (const auto & entry : fs::directory_iterator(path)){
         if(entry.is_directory()){
             anyWriteableFile = anyFileWriteableRecursive(entry.path());
+            if(anyWriteableFile){
+                return true;
+            }
         }
         else if(canWriteToFile(QString::fromStdString(entry.path()))){
             return true;
