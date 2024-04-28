@@ -8,7 +8,7 @@
 #include <QDialog>
 #include <QMessageBox>
 #include <QtConcurrent/QtConcurrent>
-#include "libusb-1.0/libusb.h"
+#include <libusb-1.0/libusb.h>
 #include "linux-adk.h"
 #include "virtualstylus.h"
 using namespace QtConcurrent;

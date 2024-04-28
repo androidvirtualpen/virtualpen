@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <poll.h>
-#include "/usr/include/libusb-1.0/libusb.h"
+#include <libusb-1.0/libusb.h>
 
 #include "linux-adk.h"
 #include "hid.h"
