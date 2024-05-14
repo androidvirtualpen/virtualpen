@@ -1,11 +1,13 @@
 #include <QGuiApplication>
 #include <chrono>
+#include <QDebug>
 #include "virtualstylus.h"
 #include "error.h"
 #include "uinput.h"
 #include "constants.h"
 #include "accessory.h"
 #include "pressuretranslator.h"
+#include "mainwindow.h"
 
 using namespace std::chrono;
 
@@ -26,6 +28,7 @@ void VirtualStylus::initializeStylus(){
 void VirtualStylus::handleAccessoryEventData(AccessoryEventData * accessoryEventData){
     Error * err = new Error();
     uint64_t epoch = duration_cast<milliseconds>(system_clock::now().time_since_epoch()).count();
+    displayEventDebugInfo(accessoryEventData);
     if(accessoryEventData->action == ACTION_DOWN || accessoryEventData->action == ACTION_MOVE){
         if(accessoryEventData->action == ACTION_DOWN){
             send_uinput_event(fd, ET_KEY, EC_KEY_TOUCH, 1, err);
@@ -67,6 +70,17 @@ void VirtualStylus::handleAccessoryEventData(AccessoryEventData * accessoryEvent
     send_uinput_event(fd, ET_MSC, EC_MSC_TIMESTAMP, epoch, err);
     send_uinput_event(fd, ET_SYNC, EC_SYNC_REPORT, 0, err);
     delete err;
+}
+
+void VirtualStylus::displayEventDebugInfo(AccessoryEventData * accessoryEventData){
+    if(MainWindow::isDebugMode){
+        qDebug() << "              ";
+        qDebug() << "Event Action: " << accessoryEventData->action;
+        qDebug() << "Event Tool type: " << accessoryEventData->toolType;
+        qDebug() << "Event pressure: " << accessoryEventData->pressure;
+        qDebug() << "Event x pos: " << accessoryEventData->x;
+        qDebug() << "Event y pos: " << accessoryEventData->y;
+    }
 }
 
 

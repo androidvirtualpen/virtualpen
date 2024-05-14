@@ -18,5 +18,6 @@ private:
     bool isPenActive;
     DisplayScreenTranslator * displayScreenTranslator;
     PressureTranslator * pressureTranslator;
+    void displayEventDebugInfo(AccessoryEventData * accessoryEventData);
 };
 #endif // VIRTUALSTYLUS_H
