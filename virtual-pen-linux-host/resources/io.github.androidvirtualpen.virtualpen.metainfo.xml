@@ -19,6 +19,11 @@ In fixed mode, if the android device screen resolution fits into your PC screen,
       <li>Detects available usb devices and automatically save your settings for each</li>
       <li>Supports both X11 and Wayland</li>
     </ul>
+    <p>Usage</p>
+    <p>Start the android application connected to your PC through usb. It should warn that the link with the PC is not yet established. For the link to be fully establish, you need to start the virtual-pen app on your PC which will set your device in accessory mode.
+    On the linux host, launch the Virtual Pen application, select your device (hit refresh if not shown) then enter the device's screen horizontal and vertical resolutions and then press "connect". 
+    Upon the first connection, Android should ask you to allow the Virtual Pen app to handle the connection - press ok.
+     Once this done, you should be able to use your pen and see your PC cursor move as intended. Note that this software is still in beta stage and still ought to be tested with various devices.</p>
   </description>
   <launchable type="desktop-id">io.github.androidvirtualpen.virtualpen.desktop</launchable>
   <branding>
