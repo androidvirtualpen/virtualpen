@@ -74,7 +74,6 @@ void VirtualStylus::handleAccessoryEventData(AccessoryEventData * accessoryEvent
 
 void VirtualStylus::displayEventDebugInfo(AccessoryEventData * accessoryEventData){
     if(MainWindow::isDebugMode){
-        qDebug() << "              ";
         qDebug() << "Event Action: " << accessoryEventData->action;
         qDebug() << "Event Tool type: " << accessoryEventData->toolType;
         qDebug() << "Event pressure: " << accessoryEventData->pressure;

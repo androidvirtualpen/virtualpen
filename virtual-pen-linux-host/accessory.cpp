@@ -23,6 +23,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <iostream>
+#include <QDebug>
 #include <libusb-1.0/libusb.h>
 #include "virtualstylus.h"
 #include "accessory.h"
@@ -37,6 +38,7 @@ void extractAccessoryEventData(AccessoryEventData * accessoryEventData,
 {
 
     array<string, 5> strs = readUntilDelimiter(dataBuffer, size);
+    printRawInputData(&strs);
     accessoryEventData->toolType = std::stoi(strs[0]);
     accessoryEventData->action = std::stoi(strs[1]);
     accessoryEventData->x = std::stoi(strs[2]);
@@ -44,6 +46,15 @@ void extractAccessoryEventData(AccessoryEventData * accessoryEventData,
     if(strs[4] != ""){
         accessoryEventData->pressure = std::stod(strs[4]);
     }
+}
+
+void printRawInputData(array<string, 5> * strs){
+    qDebug() << "              ";
+    qDebug() << "Raw Tool type: " << QString::fromStdString((*strs)[0]);
+    qDebug() << "Raw Action type: " << QString::fromStdString((*strs)[1]);
+    qDebug() << "Raw X pos: " << QString::fromStdString((*strs)[2]);
+    qDebug() << "Raw Y pos: " << QString::fromStdString((*strs)[3]);
+    qDebug() << "Raw pressure: " << QString::fromStdString((*strs)[4]);
 }
 
 array<string, 5> readUntilDelimiter(unsigned char* dataBuffer, int size){
@@ -106,7 +117,6 @@ void accessory_main(accessory_t * acc, VirtualStylus* virtualStylus)
                     if (!(i % 8))
                         printf("\n");
                 }
-                printf("\n");
             }
             virtualStylus->handleAccessoryEventData(accessoryEventData);
 		}
