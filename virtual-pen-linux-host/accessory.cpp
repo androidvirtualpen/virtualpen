@@ -49,12 +49,14 @@ void extractAccessoryEventData(AccessoryEventData * accessoryEventData,
 }
 
 void printRawInputData(array<string, 5> * strs){
-    qDebug() << "              ";
-    qDebug() << "Raw Tool type: " << QString::fromStdString((*strs)[0]);
-    qDebug() << "Raw Action type: " << QString::fromStdString((*strs)[1]);
-    qDebug() << "Raw X pos: " << QString::fromStdString((*strs)[2]);
-    qDebug() << "Raw Y pos: " << QString::fromStdString((*strs)[3]);
-    qDebug() << "Raw pressure: " << QString::fromStdString((*strs)[4]);
+    if(MainWindow::isDebugMode){
+        qDebug() << "              ";
+        qDebug() << "Raw Tool type: " << QString::fromStdString((*strs)[0]);
+        qDebug() << "Raw Action type: " << QString::fromStdString((*strs)[1]);
+        qDebug() << "Raw X pos: " << QString::fromStdString((*strs)[2]);
+        qDebug() << "Raw Y pos: " << QString::fromStdString((*strs)[3]);
+        qDebug() << "Raw pressure: " << QString::fromStdString((*strs)[4]);
+    }
 }
 
 array<string, 5> readUntilDelimiter(unsigned char* dataBuffer, int size){
