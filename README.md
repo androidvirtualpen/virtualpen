@@ -41,17 +41,8 @@ Install with: `sudo apt install ./virtual-pen-linux-host_0.1-1_amd64.deb`
 
 #### Flatpak
 
-Until the software is out of beta stage, the flatpak package is distributed as a standalone bundle.
-
-Download the [flatpak bundle](https://github.com/androidvirtualpen/virtualpen/releases/download/0.1/virtualpen.flatpak)
-
-Assuming you have flatpak installed, run the installation with:
-
-`flatpak install ./virtualpen.flatpak`
-
-Note that if you do not have the right kde sdk already installed, this installation step might require some time.
-
-You can then launch the flatpak through: `flatpak run io.github.androidvirtualpen.virtualpen`
+You can obtain the flatpak from [flathub](https://flathub.org/apps/io.github.androidvirtualpen.virtualpen)
+Or, if you have flathub in in your flatpak repos, directly through: `flatpak install io.github.androidvirtualpen.virtualpen`
 
 
 #### Standalone Binary
